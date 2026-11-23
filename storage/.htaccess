@@ -1,0 +1,2 @@
+# Never serve uploaded files, the database or logs directly.
+Require all denied

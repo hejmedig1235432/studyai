@@ -1,0 +1,15 @@
+# Used only when the WHOLE studyai folder is uploaded into the web root (e.g. public_html).
+# It serves the public/ folder and blocks everything else (code, database, uploads, .env).
+Options -Indexes
+DirectoryIndex index.php
+
+<FilesMatch "(^\.env|\.md$|\.sql$|\.sqlite|\.log$|^dev-server\.js$|^\.gitignore$|^composer\.)">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(src|bin|migrations|storage|docs|\.claude)(/|$) - [F,L]
+  RewriteCond %{REQUEST_URI} !/public/
+  RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

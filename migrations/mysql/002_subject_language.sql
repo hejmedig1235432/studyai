@@ -1,0 +1,1 @@
+ALTER TABLE subjects ADD COLUMN language VARCHAR(16) NULL;

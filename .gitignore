@@ -1,0 +1,14 @@
+# Secrets – never upload
+.env
+storage/*
+!storage/.htaccess
+
+# Local test accounts (passwords) and build output
+docs/dev-test-account.md
+studyai-upload.zip
+*.zip
+
+# Misc
+node_modules/
+.DS_Store
+Thumbs.db
